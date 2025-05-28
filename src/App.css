@@ -1,70 +1,79 @@
+/* src/App.css */
 .App {
-    font-family: sans-serif;
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la lista de tareas */
 ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    background: #f4f4f4;
-    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    margin: 5px 0;
     padding: 10px;
-    border-radius: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-li button {
-    margin-top: 5px;
-    margin-right: 5px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
     cursor: pointer;
-    background-color: #007bff;
-    color: white;
 }
 
-li button:hover {
-    opacity: 0.9;
-}
-
-form div {
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input[type="text"],
-form textarea,
-form input[type="date"] {
-    width: 100%;
+input[type="text"] {
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+    margin-right: 5px;
+    width: 300px;
 }
 
-form button {
-    padding: 10px 15px;
-    background-color: #28a745;
+input[type="date"] {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+button.add-button {
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 8px 15px;
     cursor: pointer;
 }
 
-form button:hover {
-    opacity: 0.9;
+button.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+button.toggle-complete-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
 }
