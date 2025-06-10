@@ -1,79 +1,116 @@
 /* src/App.css */
+:root {
+  --bg-color: #121212;
+  --card-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --placeholder-color: #999;
+  --accent-green: #4caf50;
+  --accent-blue: #2196f3;
+  --accent-red: #f44336;
+  --border-color: #2c2c2c;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
   margin-top: 20px;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1f1f1f;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 20px;
+  color: var(--text-color);
   margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color); 
 }
 
-/* Estilos para la lista de tareas */
+/* Lista de tareas */
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
 }
 
 li {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    margin: 5px 0;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  margin: 6px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+li:hover {
+  background-color: #272727;
 }
 
 li.completed {
-    text-decoration: line-through;
-    opacity: 0.7;
+  text-decoration: line-through;
+  opacity: 0.6;
 }
 
+/* Inputs */
+input[type="text"],
+input[type="date"],
+textarea {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  margin-right: 5px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* Botones */
 button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-input[type="text"] {
-    padding: 8px;
-    margin-right: 5px;
-    width: 300px;
-}
-
-input[type="date"] {
-    padding: 8px;
-    margin-right: 5px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
 button.add-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
+  background-color: var(--accent-green);
 }
 
 button.delete-button {
-    background-color: #f44336;
-    color: white;
-    border: none;
+  background-color: var(--accent-red);
 }
 
 button.toggle-complete-button {
-    background-color: #008CBA;
-    color: white;
-    border: none;
+  background-color: var(--accent-blue);
+}
+
+button:hover {
+  filter: brightness(1.1);
 }
